@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="container">
+        <nav>
+            <a href="/" class="logo">Joysan Electronics Shop</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="cart-icon" onclick="toggleCart()">
+                <img src="cart-icon.png" alt="Cart">
+                <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart">
+            <h2>Your Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will be added here -->
+            </ul>
+            <div class="cart-total">
+                <p>Total: $<span id="cart-total">0.00</span></p>
+            </div>
+             <button class="close-cart-btn" onclick="toggleCart()">Close Cart</button>
+            <button class="checkout-button">Checkout</button>
+        </div>
+    </div>
+
+    <main>
+          <section class="hero container">
+            <div class="hero-content">
+                <h1>Sing Your Heart Out with the Best in Karaoke!</h1>
+                <p>Explore the latest gadgets and find the perfect device for your needs.</p>
+                <a href="#featured-products" class="btn hero-button">Shop Now</a>
+            </div>
+            <div class="hero-image">
+                <img src="lgo.jpeg" alt="Tech Gadgets">
+            </div>
+        </section>
+       <section class="featured container" id="featured-products">
+            <h2>Featured Products</h2>
+           <div class="product-list">
+               <div class="product">
+                   <img src="coffee.jpeg" alt="Headphones">
+                   <h3 class="product-title">Coffee Machine</h3>
+                   <p class="price">$79.99</p>
+                   <button class="add-to-cart-btn" onclick="addToCart('Headphones', 79.99)">Add to Cart</button>
+               </div>
+               <div class="product">
+                   <img src="hot and cold vendo.jpeg" alt="Keyboard">
+                   <h3 class="product-title">Hot and Cold Vendo</h3>
+                   <p class="price">$129.99</p>
+                   <button class="add-to-cart-btn" onclick="addToCart('Keyboard', 129.99)">Add to Cart</button>
+               </div>
+               <div class="product">
+                   <img src="videoke.jpeg" alt="Mouse">
+                   <h3 class="product-title">Videoke Machine</h3>
+                   <p class="price">$49.99</p>
+                   <button class="add-to-cart-btn" onclick="addToCart('Mouse', 49.99)">Add to Cart</button>
+               </div>
+                <div class="product">
+                   <img src="speaker.jpeg" alt="Smartwatch">
+                   <h3 class="product-title">Smartwatch</h3>
+                   <p class="price">$199.99</p>
+                   <button class="add-to-cart-btn" onclick="addToCart('Smartwatch', 199.99)">Add to Cart</button>
+               </div>
+            </div>
+        </section>
+         <section class="categories container">
+             <h2>Shop By Category</h2>
+             <div class="category-list">
+                    <div class="category">
+                         <img src="category-headphones.jpg" alt="Headphones">
+                          <h3>Headphones</h3>
+                    </div>
+                    <div class="category">
+                         <img src="category-keyboard.jpg" alt="Keyboards">
+                          <h3>Keyboards</h3>
+                    </div>
+                      <div class="category">
+                          <img src="category-mice.jpg" alt="Mice">
+                          <h3>Mice</h3>
+                    </div>
+                    <div class="category">
+                         <img src="category-smartwatches.jpg" alt="Smartwatches">
+                          <h3>Smartwatches</h3>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+  <footer class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                 <h3>Follow Us</h3>
+                  <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+            </div>
+             <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: info@techshop.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+           <p>© 2024 Tech Shop. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
