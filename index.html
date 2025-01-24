@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Shop</title>
+     <title>Joysan Electronics Shop | Karaoke Machines, Vending Machines & More</title>
+    <meta name="description" content="Explore Joysan Electronics Shop for the latest karaoke machines, hot & cold vending machines, and other electronics. Shop now for quality and affordable gadgets.">
+    <meta name="keywords" content="karaoke machine, vending machine, hot and cold vendo, electronics shop, gadgets, audio equipment, appliances">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -14,28 +16,28 @@
     <header class="container">
         <nav>
             <a href="/" class="logo">Joysan Electronics Shop</a>
-            <div class="search-bar">
-                <input type="text" placeholder="Search products...">
-                <button type="submit"><i class="fas fa-search"></i></button>
+             <div class="search-bar">
+                <input type="text" placeholder="Search products..." aria-label="Search products">
+                <button type="submit"><i class="fas fa-search" aria-hidden="true"></i><span class="sr-only">Search</span></button>
             </div>
-            <div class="cart-icon" onclick="toggleCart()">
-                <img src="cart-icon.png" alt="Cart">
+            <div class="cart-icon" onclick="toggleCart()" aria-label="View Cart">
+                <img src="cart-icon.png" alt="Shopping Cart Icon">
                 <span id="cart-count">0</span>
             </div>
         </nav>
     </header>
 
-    <div class="cart-overlay" id="cart-overlay">
+    <div class="cart-overlay" id="cart-overlay" aria-modal="true" role="dialog" aria-labelledby="cart-title">
         <div class="cart">
-            <h2>Your Cart</h2>
+            <h2 id="cart-title">Your Cart</h2>
             <ul id="cart-items">
                 <!-- Cart items will be added here -->
             </ul>
             <div class="cart-total">
                 <p>Total: $<span id="cart-total">0.00</span></p>
             </div>
-             <button class="close-cart-btn" onclick="toggleCart()">Close Cart</button>
-            <button class="checkout-button">Checkout</button>
+             <button class="close-cart-btn" onclick="toggleCart()" aria-label="Close Cart">Close Cart</button>
+            <button class="checkout-button" aria-label="Proceed to Checkout">Checkout</button>
         </div>
     </div>
 
@@ -47,56 +49,38 @@
                 <a href="#featured-products" class="btn hero-button">Shop Now</a>
             </div>
             <div class="hero-image">
-                <img src="lgo.jpeg" alt="Tech Gadgets">
+                <img src="lgo.jpeg" alt="Tech Gadgets and Electronics">
             </div>
         </section>
        <section class="featured container" id="featured-products">
             <h2>Featured Products</h2>
-           <div class="product-list">
-               <div class="product">
-                   <img src="coffee.jpeg" alt="Headphones">
-                   <h3 class="product-title">Coffee Machine</h3>
-                   <p class="price">$79.99</p>
-                   <button class="add-to-cart-btn" onclick="addToCart('Headphones', 79.99)">Add to Cart</button>
-               </div>
-               <div class="product">
-                   <img src="hot and cold vendo.jpeg" alt="Keyboard">
-                   <h3 class="product-title">Hot and Cold Vendo</h3>
-                   <p class="price">$129.99</p>
-                   <button class="add-to-cart-btn" onclick="addToCart('Keyboard', 129.99)">Add to Cart</button>
-               </div>
-               <div class="product">
-                   <img src="videoke.jpeg" alt="Mouse">
-                   <h3 class="product-title">Videoke Machine</h3>
-                   <p class="price">$49.99</p>
-                   <button class="add-to-cart-btn" onclick="addToCart('Mouse', 49.99)">Add to Cart</button>
-               </div>
-                <div class="product">
-                   <img src="speaker.jpeg" alt="Smartwatch">
-                   <h3 class="product-title">Smartwatch</h3>
-                   <p class="price">$199.99</p>
-                   <button class="add-to-cart-btn" onclick="addToCart('Smartwatch', 199.99)">Add to Cart</button>
-               </div>
+             <button class="view-all-button" id="view-all-button">View All Products</button>
+           <div class="product-list" id="product-list">
+               <!-- Products will be rendered here -->
             </div>
         </section>
          <section class="categories container">
              <h2>Shop By Category</h2>
              <div class="category-list">
                     <div class="category">
-                         <img src="category-headphones.jpg" alt="Headphones">
-                          <h3>Headphones</h3>
+                         <img src="category-headphones.jpg" alt="Headphones Category">
+                          <h3>Audio</h3>
                     </div>
                     <div class="category">
-                         <img src="category-keyboard.jpg" alt="Keyboards">
+                         <img src="category-keyboard.jpg" alt="Keyboards Category">
                           <h3>Keyboards</h3>
                     </div>
                       <div class="category">
-                          <img src="category-mice.jpg" alt="Mice">
+                          <img src="category-mice.jpg" alt="Mice Category">
                           <h3>Mice</h3>
                     </div>
                     <div class="category">
-                         <img src="category-smartwatches.jpg" alt="Smartwatches">
+                         <img src="category-smartwatches.jpg" alt="Smartwatches Category">
                           <h3>Smartwatches</h3>
+                    </div>
+                      <div class="category">
+                         <img src="category-appliances.jpg" alt="Appliances Category">
+                          <h3>Appliances</h3>
                     </div>
             </div>
         </section>
@@ -115,9 +99,9 @@
             <div class="footer-section">
                  <h3>Follow Us</h3>
                   <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
             </div>
              <div class="footer-section">
@@ -130,6 +114,6 @@
            <p>© 2024 Tech Shop. All Rights Reserved.</p>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
